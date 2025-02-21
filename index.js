@@ -5,6 +5,7 @@ import { StatusCodes } from 'http-status-codes'
 import routerUser from './routers/user.js'
 import routerProduct from './routers/product.js'
 import routerOrder from './routers/order.js'
+import routerReply from './routers/reply.js'
 import cors from 'cors'
 import './passport.js'
 
@@ -34,6 +35,8 @@ app.use((error, req, res, next) => {
 app.use('/user', routerUser)
 app.use('/product', routerProduct)
 app.use('/order', routerOrder)
+// 使用 reply 路由
+app.use('/reply', routerReply)
 
 app.listen(process.env.PORT || 4000, () => {
   console.log('伺服器啟動')
