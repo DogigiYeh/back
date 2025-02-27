@@ -19,4 +19,9 @@ router.patch('/:id', auth.jwt, auth.admin, reply.updateStatus)
 // // 刪除回報（可選，若不允許刪除則可移除）
 // router.delete('/:id', auth.jwt, auth.admin, reply.delete)
 
+// 測試用的 GET /reply，確保這個路由存在
+router.get('/', (req, res) => {
+  res.send('Hello from /reply!')
+})
+
 export default router
